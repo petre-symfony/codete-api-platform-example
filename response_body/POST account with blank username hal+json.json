@@ -1,0 +1,14 @@
+/**
+  curl -X POST "https://localhost:8000/api/accounts" -H "accept: application/hal+json" -H "Content-Type: application/ld+json" -d "{ \"username\": \"\"}"
+*/
+{
+  "type": "https://tools.ietf.org/html/rfc2616#section-10",
+  "title": "An error occurred",
+  "detail": "username: Please provide username",
+  "violations": [
+    {
+      "propertyPath": "username",
+      "message": "Please provide username"
+    }
+  ]
+}

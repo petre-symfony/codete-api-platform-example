@@ -1,0 +1,15 @@
+/**
+  curl -X POST "https://localhost:8000/api/accounts" -H "accept: application/ld+json" -H "Content-Type: application/ld+json" -d "{ \"username\": \"\"}"
+*/
+{
+  "@context": "/api/contexts/ConstraintViolationList",
+  "@type": "ConstraintViolationList",
+  "hydra:title": "An error occurred",
+  "hydra:description": "username: This value should not be blank.",
+  "violations": [
+    {
+      "propertyPath": "username",
+      "message": "This value should not be blank."
+    }
+  ]
+}
