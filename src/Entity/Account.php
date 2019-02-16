@@ -16,6 +16,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource(attributes={
  *   "normalization_context"={"groups"={"account.read"}},
  *   "denormalization_context"={"groups"={"account.write"}}
+ * },
+ * itemOperations={
+ *   "put"={"denormalization_context"={"groups"={"account.update"}}},
+ *   "get",
+ *   "delete"
  * })
  * @ORM\Entity(repositoryClass="App\Repository\AccountRepository")
  * @ApiFilter(BooleanFilter::class, properties={"isActive"})
@@ -45,7 +50,8 @@ class Account {
    * @ORM\Column(type="boolean", options={"default" : false})
    * @Groups({
    *  "account.read",
-   *  "account.write"
+   *  "account.write",
+   *  "account.update"
    * })
    */
   private $isActive;
@@ -63,7 +69,8 @@ class Account {
    * @ORM\Column(type="string", length=255)
    * @Assert\NotBlank(message="Please provide password")
    * @Groups({
-   *  "account.write"
+   *  "account.write",
+   *  "account.update"
    * })
    */
   private $password;
