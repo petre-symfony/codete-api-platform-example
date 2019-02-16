@@ -46,7 +46,10 @@ class Role {
    *  "role.read",
    *  "role.write",
    *
-   *  "account.read"
+   *  "account.read",
+   *  "account.write",
+   *
+   *  "account.update"
    * })
    */
   private $symbol;
@@ -57,7 +60,10 @@ class Role {
    *  "role.read",
    *  "role.write",
    *
-   *   "account.read",
+   *  "account.read",
+   *  "account.write",
+   *
+   *  "account.update"
    * })
    */
   private $description;

@@ -60,7 +60,10 @@ class Account {
    * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="accounts")
    * @ApiSubresource(maxDepth=1)
    * @Groups({
-   *  "account.read"
+   *  "account.read",
+   *  "account.write",
+   *
+   *  "account.update"
    * })
    */
   private $roles;
