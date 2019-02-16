@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -24,6 +25,7 @@ class Role {
 
   /**
    * @ORM\ManyToMany(targetEntity="App\Entity\Account", inversedBy="roles")
+   * @ApiSubresource(maxDepth=1)
    */
   private $accounts;
 

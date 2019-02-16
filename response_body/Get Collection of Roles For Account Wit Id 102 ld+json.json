@@ -1,0 +1,34 @@
+/**
+  curl -X GET "https://localhost:8000/api/accounts/102/roles" -H "accept: application/ld+json"
+*/
+{
+  "@context": "/api/contexts/Role",
+  "@id": "/api/accounts/102/roles",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/api/roles/1",
+      "@type": "Role",
+      "id": 1,
+      "accounts": [
+        "/api/accounts/102"
+      ],
+      "symbol": "ROLE_SUPER_ADMIN",
+      "description": "You can do whatever you want"
+    }
+  ],
+  "hydra:totalItems": 1,
+  "hydra:search": {
+    "@type": "hydra:IriTemplate",
+    "hydra:template": "/api/accounts/102/roles{?accounts.isActive}",
+    "hydra:variableRepresentation": "BasicRepresentation",
+    "hydra:mapping": [
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "accounts.isActive",
+        "property": "accounts.isActive",
+        "required": false
+      }
+    ]
+  }
+}
