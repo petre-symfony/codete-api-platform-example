@@ -41,6 +41,11 @@ class Account {
    */
   private $roles;
 
+  /**
+   * @ORM\Column(type="string", length=255)
+   */
+  private $password;
+
   public function __construct() {
     $this->roles = new ArrayCollection();
   }
@@ -90,6 +95,16 @@ class Account {
       $this->roles->removeElement($role);
       $role->removeAccount($this);
     }
+
+    return $this;
+  }
+
+  public function getPassword(): ?string {
+    return $this->password;
+  }
+
+  public function setPassword(string $password): self {
+    $this->password = $password;
 
     return $this;
   }
