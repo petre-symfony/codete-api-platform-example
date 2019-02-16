@@ -5,6 +5,8 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -32,6 +34,15 @@ class Account {
    */
   private $isActive;
 
+  /**
+   * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="accounts")
+   */
+  private $roles;
+
+  public function __construct() {
+    $this->roles = new ArrayCollection();
+  }
+
   public function getId(): ?int {
     return $this->id;
   }
@@ -52,6 +63,31 @@ class Account {
 
   public function setIsActive(bool $isActive): self {
     $this->isActive = $isActive;
+
+    return $this;
+  }
+
+  /**
+   * @return Collection|Role[]
+   */
+  public function getRoles(): Collection {
+    return $this->roles;
+  }
+
+  public function addRole(Role $role): self {
+    if (!$this->roles->contains($role)) {
+      $this->roles[] = $role;
+      $role->addAccount($this);
+    }
+
+    return $this;
+  }
+
+  public function removeRole(Role $role): self {
+    if ($this->roles->contains($role)) {
+      $this->roles->removeElement($role);
+      $role->removeAccount($this);
+    }
 
     return $this;
   }
