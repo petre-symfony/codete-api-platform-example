@@ -1,0 +1,131 @@
+/**
+  curl -X GET "https://localhost:8000/api/accounts" -H "accept: application/ld+json"
+*/
+{
+  "@context": "/api/contexts/Account",
+  "@id": "/api/accounts",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/api/accounts/22",
+      "@type": "Account",
+      "id": 22,
+      "username": "jonsnow_1"
+    },
+    {
+      "@id": "/api/accounts/23",
+      "@type": "Account",
+      "id": 23,
+      "username": "jonsnow_2"
+    },
+    {
+      "@id": "/api/accounts/24",
+      "@type": "Account",
+      "id": 24,
+      "username": "jonsnow_3"
+    },
+    {
+      "@id": "/api/accounts/25",
+      "@type": "Account",
+      "id": 25,
+      "username": "jonsnow_4"
+    },
+    {
+      "@id": "/api/accounts/26",
+      "@type": "Account",
+      "id": 26,
+      "username": "jonsnow_5"
+    },
+    {
+      "@id": "/api/accounts/27",
+      "@type": "Account",
+      "id": 27,
+      "username": "jonsnow_6"
+    },
+    {
+      "@id": "/api/accounts/28",
+      "@type": "Account",
+      "id": 28,
+      "username": "jonsnow_7"
+    },
+    {
+      "@id": "/api/accounts/29",
+      "@type": "Account",
+      "id": 29,
+      "username": "jonsnow_8"
+    },
+    {
+      "@id": "/api/accounts/30",
+      "@type": "Account",
+      "id": 30,
+      "username": "jonsnow_9"
+    },
+    {
+      "@id": "/api/accounts/31",
+      "@type": "Account",
+      "id": 31,
+      "username": "jonsnow_10"
+    },
+    {
+      "@id": "/api/accounts/32",
+      "@type": "Account",
+      "id": 32,
+      "username": "jonsnow_11"
+    },
+    {
+      "@id": "/api/accounts/33",
+      "@type": "Account",
+      "id": 33,
+      "username": "jonsnow_12"
+    },
+    {
+      "@id": "/api/accounts/34",
+      "@type": "Account",
+      "id": 34,
+      "username": "jonsnow_13"
+    },
+    {
+      "@id": "/api/accounts/35",
+      "@type": "Account",
+      "id": 35,
+      "username": "jonsnow_14"
+    },
+    {
+      "@id": "/api/accounts/36",
+      "@type": "Account",
+      "id": 36,
+      "username": "jonsnow_15"
+    },
+    {
+      "@id": "/api/accounts/37",
+      "@type": "Account",
+      "id": 37,
+      "username": "jonsnow_16"
+    },
+    {
+      "@id": "/api/accounts/38",
+      "@type": "Account",
+      "id": 38,
+      "username": "jonsnow_17"
+    },
+    {
+      "@id": "/api/accounts/39",
+      "@type": "Account",
+      "id": 39,
+      "username": "jonsnow_18"
+    },
+    {
+      "@id": "/api/accounts/40",
+      "@type": "Account",
+      "id": 40,
+      "username": "jonsnow_19"
+    },
+    {
+      "@id": "/api/accounts/41",
+      "@type": "Account",
+      "id": 41,
+      "username": "jonsnow_20"
+    }
+  ],
+  "hydra:totalItems": 20
+}

@@ -8,9 +8,9 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture {
   public function load(ObjectManager $manager) {
-	  $firstAccount = new Account();
-	  $firstAccount->setUsername('jonsnow');
-	  $manager->persist($firstAccount);
+    for ($i = 1; $i <= 20; ++$i) {
+      $manager->persist((new Account())->setUsername('jonsnow_'.$i));
+    }
 
     $manager->flush();
   }
