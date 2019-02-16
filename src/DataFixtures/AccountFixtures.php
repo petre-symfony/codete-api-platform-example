@@ -11,6 +11,7 @@ class AccountFixtures extends Fixture {
     for ($i = 1; $i <= 20; ++$i) {
 	    $account = new Account();
 	    $account->setUsername('jonsnow_'.$i);
+	    $account->setPassword(md5((new \DateTime())->getTimestamp()));
 	    $account->setIsActive(0 == $i % 2 ? false : true);
 	    $manager->persist($account);
 	    $this->addReference('account_'.$i, $account);
